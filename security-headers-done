@@ -1,0 +1,24 @@
+It should return a CORS header ... ok
+It should create an Account ... ok
+It should not create an Account with missing data ... ok
+It should delete an Account ... ok
+It should call the home page ... ok
+It should list all Accounts ... ok
+It should read an Account ... ok
+It should not read an Account that does not exist ... ok
+It should return security headers ... ok
+It should update an Account ... ok
+It should not update an Account that does not exist ... ok
+
+Name                  Stmts   Miss  Cover   Missing
+---------------------------------------------------
+service/__init__.py      11      1    91%
+service/config.py         6      1    83%
+service/models.py        39      0   100%
+service/routes.py        44      3    93%   50-51
+---------------------------------------------------
+TOTAL                   100      5    95%
+----------------------------------------
+Ran 11 tests in 1.328s
+
+OK

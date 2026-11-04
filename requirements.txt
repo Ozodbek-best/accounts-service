@@ -6,3 +6,5 @@ gunicorn==20.1.0
 pynose
 coverage==6.3.2
 flake8==5.0.4
+Flask-Talisman==0.8.1
+Flask-Cors==3.0.10

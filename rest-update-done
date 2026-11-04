@@ -1,0 +1,10 @@
+$ curl -i -X PUT http://localhost:5000/accounts/1 -H 'Content-Type: application/json' -d '{"name":"Jane Doe","email":"jane@example.com","address":"456 Oak Ave","phone_number":"555-9999"}'
+HTTP/1.1 200 OK
+Server: Werkzeug/2.1.2 Python/3.11.15
+Date: Wed, 04 Nov 2026 13:21:25 GMT
+Content-Type: application/json
+Content-Length: 104
+Connection: close
+
+{"address":"456 Oak Ave","email":"jane@example.com","id":1,"name":"Jane Doe","phone_number":"555-9999"}
+
