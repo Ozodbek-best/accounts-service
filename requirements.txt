@@ -1,0 +1,8 @@
+Flask==2.1.3
+Werkzeug==2.1.2
+Flask-SQLAlchemy==2.5.1
+SQLAlchemy==1.4.46
+gunicorn==20.1.0
+pynose
+coverage==6.3.2
+flake8==5.0.4
