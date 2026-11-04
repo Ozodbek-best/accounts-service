@@ -1,0 +1,12 @@
+NAME                           READY   STATUS    RESTARTS   AGE
+pod/accounts-dfc997d9d-ncd9m   1/1     Running   0          40s
+
+NAME               TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
+service/accounts   ClusterIP   172.21.116.234   <none>        8080/TCP   13m
+
+NAME                       READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/accounts   1/1     1            1           13m
+
+NAME                                  DESIRED   CURRENT   READY   AGE
+replicaset.apps/accounts-659d4dcdcb   0         0         0       13m
+replicaset.apps/accounts-dfc997d9d    1         1         1       40s
