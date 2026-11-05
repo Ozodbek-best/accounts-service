@@ -1,0 +1,71 @@
+[init : remove] Removing all files from /workspace/source ...
+
+[clone : clone] + '[' false '=' true ]
+[clone : clone] + '[' false '=' true ]
+[clone : clone] + '[' false '=' true ]
+[clone : clone] + CHECKOUT_DIR=/workspace/output/
+[clone : clone] + '[' true '=' true ]
+[clone : clone] + cleandir
+[clone : clone] + '[' -d /workspace/output/ ]
+[clone : clone] + rm -rf '/workspace/output//*'
+[clone : clone] + rm -rf '/workspace/output//.[!.]*'
+[clone : clone] + rm -rf '/workspace/output//..?*'
+[clone : clone] + test -z 
+[clone : clone] + test -z 
+[clone : clone] + test -z 
+[clone : clone] + git config --global --add safe.directory /workspace/output
+[clone : clone] + /ko-app/git-init '-url=https://github.com/Ozodbek-best/accounts-service.git' '-revision=main' '-refspec=' '-path=/workspace/output/' '-sslVerify=true' '-submodules=true' '-depth=1' '-sparseCheckoutDirectories='
+[clone : clone] {"level":"info","ts":1793872545.9201849,"caller":"git/git.go:176","msg":"Successfully cloned https://github.com/Ozodbek-best/accounts-service.git @ 22ff16a3c011cbb7b5105001637e6c994881888f (grafted, HEAD, origin/main) in path /workspace/output/"}
+[clone : clone] {"level":"info","ts":1793872545.9468584,"caller":"git/git.go:215","msg":"Successfully initialized and updated submodules in path /workspace/output/"}
+[clone : clone] + cd /workspace/output/
+[clone : clone] + git rev-parse HEAD
+[clone : clone] + RESULT_SHA=22ff16a3c011cbb7b5105001637e6c994881888f
+[clone : clone] + EXIT_CODE=0
+[clone : clone] + '[' 0 '!=' 0 ]
+[clone : clone] + git log -1 '--pretty=%ct'
+[clone : clone] + RESULT_COMMITTER_DATE=1793816339
+[clone : clone] + printf '%s' 1793816339
+[clone : clone] + printf '%s' 22ff16a3c011cbb7b5105001637e6c994881888f
+[clone : clone] + printf '%s' https://github.com/Ozodbek-best/accounts-service.git
+
+[lint : flake8] WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='pypi.org', port=443): Read timed out. (read timeout=15)")': /simple/flake8/
+[lint : flake8] WARNING: Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='pypi.org', port=443): Read timed out. (read timeout=15)")': /simple/flake8/
+[lint : flake8] WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='pypi.org', port=443): Read timed out. (read timeout=15)")': /simple/flake8/
+[lint : flake8] WARNING: Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='pypi.org', port=443): Read timed out. (read timeout=15)")': /simple/flake8/
+[lint : flake8]   WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='files.pythonhosted.org', port=443): Read timed out. (read timeout=15)")': /packages/cf/a0/b881b63a17a59d9d07f5c0cc91a29182c8e8a9aa2bde5b3b2b16519c02f4/flake8-5.0.4-py2.py3-none-any.whl
+[lint : flake8] WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[lint : flake8] 0
+[lint : flake8] 0
+
+[tests : nosetests] ***** Installing dependencies *****
+[tests : nosetests] WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='pypi.org', port=443): Read timed out. (read timeout=15)")': /simple/flask/
+[tests : nosetests] WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+[tests : nosetests] 
+[tests : nosetests] [notice] A new release of pip is available: 23.0.1 -> 26.0.1
+[tests : nosetests] [notice] To update, run: pip install --upgrade pip
+[tests : nosetests] ***** Running nosetests *****
+[tests : nosetests] It should return a CORS header ... ok
+[tests : nosetests] It should create an Account ... ok
+[tests : nosetests] It should not create an Account with missing data ... ok
+[tests : nosetests] It should delete an Account ... ok
+[tests : nosetests] It should call the home page ... ok
+[tests : nosetests] It should list all Accounts ... ok
+[tests : nosetests] It should read an Account ... ok
+[tests : nosetests] It should not read an Account that does not exist ... ok
+[tests : nosetests] It should return security headers ... ok
+[tests : nosetests] It should update an Account ... ok
+[tests : nosetests] It should not update an Account that does not exist ... ok
+[tests : nosetests] 
+[tests : nosetests] Name                  Stmts   Miss  Cover   Missing
+[tests : nosetests] ---------------------------------------------------
+[tests : nosetests] service/__init__.py      10      0   100%
+[tests : nosetests] service/config.py         5      0   100%
+[tests : nosetests] service/models.py        38      0   100%
+[tests : nosetests] service/routes.py        43      2    95%   50-51
+[tests : nosetests] ---------------------------------------------------
+[tests : nosetests] TOTAL                    96      2    98%
+[tests : nosetests] ----------------------------------------
+[tests : nosetests] Ran 11 tests in 0.915s
+[tests : nosetests] 
+[tests : nosetests] OK
+

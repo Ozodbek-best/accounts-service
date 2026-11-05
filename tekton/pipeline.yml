@@ -1,0 +1,52 @@
+apiVersion: tekton.dev/v1
+kind: Pipeline
+metadata:
+  name: cd-pipeline
+spec:
+  workspaces:
+    - name: pipeline-workspace
+  params:
+    - name: repo-url
+      type: string
+    - name: branch
+      type: string
+      default: main
+  tasks:
+    - name: init
+      taskRef:
+        name: cleanup
+      workspaces:
+        - name: source
+          workspace: pipeline-workspace
+
+    - name: clone
+      taskRef:
+        name: git-clone
+      runAfter:
+        - init
+      workspaces:
+        - name: output
+          workspace: pipeline-workspace
+      params:
+        - name: url
+          value: $(params.repo-url)
+        - name: revision
+          value: $(params.branch)
+
+    - name: lint
+      taskRef:
+        name: flake8
+      runAfter:
+        - clone
+      workspaces:
+        - name: source
+          workspace: pipeline-workspace
+
+    - name: tests
+      taskRef:
+        name: nose
+      runAfter:
+        - lint
+      workspaces:
+        - name: source
+          workspace: pipeline-workspace
